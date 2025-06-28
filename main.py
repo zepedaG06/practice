@@ -45,14 +45,16 @@ def main():
                 else:
                     print("❌ No encontrado")
             elif opcion == "3":
-                print("Funcionalidad en construcción")
+                JugadorDAO.modificar(usuario)
+
             elif opcion == "4":
                 cedula = input("Cédula del jugador: ").strip()
                 AsistenciaDAO.registrar(usuario, cedula)
             elif opcion == "5":
                 JugadorDAO.listar(usuario)
             elif opcion == "6":
-                print("Funcionalidad en construcción")
+                JugadorDAO.eliminar(usuario)
+
             elif opcion == "7":
                 usuario = None
 
