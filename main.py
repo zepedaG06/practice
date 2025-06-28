@@ -36,8 +36,10 @@ def main():
 
             opcion = input("Opción: ").strip()
             if opcion == "1":
+                limpiar_pantalla()
                 JugadorDAO.registrar(usuario)
             elif opcion == "2":
+                limpiar_pantalla()
                 criterio = input("Ingrese cédula o nombre completo: ").strip()
                 jugador = JugadorDAO.buscar(usuario, criterio)  # Implementar buscar luego
                 if jugador:
@@ -45,14 +47,18 @@ def main():
                 else:
                     print("❌ No encontrado")
             elif opcion == "3":
+                limpiar_pantalla()
                 JugadorDAO.modificar(usuario)
 
             elif opcion == "4":
+                limpiar_pantalla()
                 cedula = input("Cédula del jugador: ").strip()
                 AsistenciaDAO.registrar(usuario, cedula)
             elif opcion == "5":
+                limpiar_pantalla()
                 JugadorDAO.listar(usuario)
             elif opcion == "6":
+                limpiar_pantalla()
                 JugadorDAO.eliminar(usuario)
 
             elif opcion == "7":
