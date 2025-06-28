@@ -28,28 +28,31 @@ def main():
             print(f"=== MENÚ ({usuario}) ===")
             print("1. Registrar jugador")
             print("2. Buscar jugador")
-            print("3. Modificar jugador")
+            print("3. Modificar jugador")  # Implementar modificar luego
             print("4. Registrar asistencia")
             print("5. Listar jugadores")
-            print("6. Eliminar jugador")
+            print("6. Eliminar jugador")  # Implementar eliminar luego
             print("7. Cerrar sesión")
 
             opcion = input("Opción: ").strip()
             if opcion == "1":
                 JugadorDAO.registrar(usuario)
             elif opcion == "2":
-                cedula = input("Cédula: ").strip()
-                jugador = JugadorDAO.buscar(usuario, cedula)
-                print(jugador if jugador else "❌ No encontrado")
+                criterio = input("Ingrese cédula o nombre completo: ").strip()
+                jugador = JugadorDAO.buscar(usuario, criterio)  # Implementar buscar luego
+                if jugador:
+                    print(jugador)
+                else:
+                    print("❌ No encontrado")
             elif opcion == "3":
-                JugadorDAO.modificar(usuario)
+                print("Funcionalidad en construcción")
             elif opcion == "4":
                 cedula = input("Cédula del jugador: ").strip()
                 AsistenciaDAO.registrar(usuario, cedula)
             elif opcion == "5":
                 JugadorDAO.listar(usuario)
             elif opcion == "6":
-                JugadorDAO.eliminar(usuario)
+                print("Funcionalidad en construcción")
             elif opcion == "7":
                 usuario = None
 
