@@ -22,14 +22,14 @@ class EntrenadorDAO:
 
         usuario = input("Usuario: ").strip()
         if usuario in entrenadores:
-            print("❌ Usuario ya existe")
+            print("Usuario ya existe")
             return
 
         contrasena = input("Contraseña: ").strip()
 
         entrenadores[usuario] = {"contrasena": contrasena}
         cls._guardar(entrenadores)
-        print("✅ Entrenador registrado")
+        print("Entrenador registrado")
 
     @classmethod
     def iniciar_sesion(cls):
@@ -39,11 +39,10 @@ class EntrenadorDAO:
 
         if usuario in entrenadores:
             datos = entrenadores[usuario]
-            # Validar que datos sea diccionario y tenga clave 'contrasena'
             if isinstance(datos, dict) and "contrasena" in datos and datos["contrasena"] == contrasena:
-                print(f"✅ Bienvenido {usuario}")
+                print(f"Bienvenido {usuario}")
                 return usuario
 
-        print("❌ Usuario o contraseña incorrectos")
+        print("Usuario o contraseña incorrectos")
         return None
 
