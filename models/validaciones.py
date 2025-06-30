@@ -8,14 +8,12 @@ def quitar_tildes(texto):
     )
 
 def validar_cedula(cedula):
-    # convierte último caracter a mayúscula para validar
     if len(cedula) < 1:
         return False
     cedula = cedula[:-1] + cedula[-1].upper()
     return bool(re.fullmatch(r"001-\d{6}-\d{4}[A-Z]", cedula))
 
-def formatear_cedula(cedula):
-    # fuerza último caracter a mayúscula
+def formatear_cedula(cedula): 
     if len(cedula) < 1:
         return cedula
     return cedula[:-1] + cedula[-1].upper()
@@ -52,7 +50,6 @@ def validar_altura(altura):
     try:
         altura = altura.replace(',', '.')
         altura_f = float(altura)
-        # si es en metros (ej. 1.80), convertir a cm
         if altura_f < 10:
             altura_f *= 100
         return 100 <= altura_f <= 250
@@ -68,7 +65,6 @@ def parsear_altura(altura):
 
 def validar_posicion(posicion):
     posiciones_validas = ["Base", "Escolta", "Alero", "Ala-Pívot", "Pívot"]
-    # normalizamos para comparar sin tildes ni mayúsculas
     posicion_norm = quitar_tildes(posicion.lower())
     return posicion_norm in posiciones_validas
 
@@ -84,7 +80,6 @@ def formatear_posicion(posicion):
     return map_pos.get(posicion_norm, None)
 
 def validar_antecedentes(antecedentes):
-    # Acepta sí, no o cualquier texto descriptivo mínimo de 2 caracteres
     antecedentes = antecedentes.strip().lower()
     return antecedentes in ["si", "no"] or len(antecedentes) >= 2
 

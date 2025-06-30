@@ -19,7 +19,7 @@ class AsistenciaDAO:
 
     @classmethod
     def registrar(cls, entrenador, cedula=None):
-        from dao.jugador_dao import JugadorDAO  # Importación dentro del método para evitar errores de importación circular
+        from dao.jugador_dao import JugadorDAO 
 
         jugadores = JugadorDAO.cargar_jugadores().get(entrenador, {})
         if not jugadores:

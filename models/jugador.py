@@ -1,5 +1,3 @@
-# models/jugador.py
-
 class Jugador:
     def __init__(self, cedula, nombre, apellido, edad, telefono, peso, altura, antecedentes, posicion):
         self.cedula = cedula
@@ -7,14 +5,14 @@ class Jugador:
         self.apellido = apellido
         self.edad = edad
         self.telefono = telefono
-        self.peso = peso          # en kilogramos, tipo float
-        self.altura = altura      # en centímetros, tipo float
+        self.peso = peso          
+        self.altura = altura      
         self.antecedentes = antecedentes
         self.posicion = posicion
-        self.imc = self.calcular_imc()  # Calcula IMC al crear la instancia
+        self.imc = self.calcular_imc()  
 
     def calcular_imc(self):
-        altura_m = self.altura / 100  # Convertir cm a metros
+        altura_m = self.altura / 100  
         if altura_m > 0:
             return self.peso / (altura_m ** 2)
         else:

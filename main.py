@@ -41,7 +41,6 @@ def main():
             elif opcion == "2":
                 limpiar_pantalla()
                 jugador = JugadorDAO.buscar_jugador(usuario)
-                # Aquí puedes usar jugador si quieres hacer algo con él
             elif opcion == "3":
                 limpiar_pantalla()
                 JugadorDAO.modificar_jugador(usuario)

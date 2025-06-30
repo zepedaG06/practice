@@ -16,7 +16,6 @@ class JugadorDAO:
         if os.path.exists(JUGADORES_FILE):
             with open(JUGADORES_FILE, "rb") as f:
                 jugadores = pickle.load(f)
-            # Normalizar las cédulas al cargar para evitar inconsistencias
                 for entrenador in jugadores:
                     jugadores_entrenador = jugadores[entrenador]
                     ceds_correctas = {}
@@ -81,7 +80,6 @@ class JugadorDAO:
             altura = input("Altura (m o cm): ").strip()
             if validar_altura(altura):
                 altura = float(altura.replace(',', '.'))
-                # Si altura < 10 asumimos metros y convertimos a cm
                 if altura < 10:
                     altura *= 100
                 break
@@ -106,7 +104,7 @@ class JugadorDAO:
 
     @staticmethod
     def buscar_jugador(entrenador_usuario):
-        from dao.asistencia_dao import AsistenciaDAO  # Import aquí para evitar error circular
+        from dao.asistencia_dao import AsistenciaDAO  
         jugadores = JugadorDAO.cargar_jugadores()
         if entrenador_usuario not in jugadores:
             print("No hay jugadores registrados.")
