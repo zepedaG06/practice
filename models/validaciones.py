@@ -42,9 +42,6 @@ def validar_peso(peso):
     except:
         return False
 
-def parsear_peso(peso):
-    peso = peso.replace(',', '.')
-    return float(peso)
 
 def validar_altura(altura):
     try:
@@ -56,12 +53,6 @@ def validar_altura(altura):
     except:
         return False
 
-def parsear_altura(altura):
-    altura = altura.replace(',', '.')
-    altura_f = float(altura)
-    if altura_f < 10:
-        altura_f *= 100
-    return altura_f
 
 def validar_posicion(posicion):
     posiciones_validas = ["Base", "Escolta", "Alero", "Ala-Pívot", "Pívot"]
