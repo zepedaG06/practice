@@ -53,11 +53,10 @@ def validar_altura(altura):
     except:
         return False
 
-
 def validar_posicion(posicion):
     posiciones_validas = ["Base", "Escolta", "Alero", "Ala-Pívot", "Pívot"]
     posicion_norm = quitar_tildes(posicion.lower())
-    return posicion_norm in posiciones_validas
+    return formatear_posicion(posicion) is not None
 
 def formatear_posicion(posicion):
     map_pos = {
